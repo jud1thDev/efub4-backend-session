@@ -4,7 +4,7 @@ os: linux
 files:
   - source: /
     destination: /home/ubuntu/efubblog
-    overwrite: yes
+    overwrite: yesS
 file_exists_behavior: OVERWRITE
 
 permissions:
