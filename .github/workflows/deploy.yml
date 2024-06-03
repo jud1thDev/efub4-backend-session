@@ -41,9 +41,8 @@ jobs:
       - name: make application.yml
         run: |
           mkdir -p blog/src/main/resources
-          cd blog/src/main/resources
-          touch application.yml
-          echo "${{ secrets.APPLICATION_YML }}" > application.yml
+          touch blog/src/main/resources/application.yml
+          echo "${{ secrets.APPLICATION_YML }}" > blog/src/main/resources/application.yml
 
       - name: Build with Gradle
         working-directory: blog
@@ -59,6 +58,7 @@ jobs:
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Upload to AWS S3
+        working-directory: blog
         run: |
           aws deploy push \
             --application-name ${{ env.CODE_DEPLOY_APPLICATION_NAME }} \
@@ -67,6 +67,7 @@ jobs:
             --source .
 
       - name: Deploy to AWS EC2 from S3
+        working-directory: blog
         run: |
           aws deploy create-deployment \
             --application-name ${{ env.CODE_DEPLOY_APPLICATION_NAME }} \
