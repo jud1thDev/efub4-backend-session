@@ -60,6 +60,7 @@ jobs:
       - name: Upload to AWS S3
         working-directory: blog
         run: |
+          echo "Pushing to S3: s3://$S3_BUCKET_NAME/$GITHUB_SHA.zip"
           aws deploy push \
             --application-name ${{ env.CODE_DEPLOY_APPLICATION_NAME }} \
             --ignore-hidden-files \
@@ -69,6 +70,7 @@ jobs:
       - name: Deploy to AWS EC2 from S3
         working-directory: blog
         run: |
+          echo "Creating deployment with group: $CODE_DEPLOY_DEPLOYMENT_GROUP_NAME"
           aws deploy create-deployment \
             --application-name ${{ env.CODE_DEPLOY_APPLICATION_NAME }} \
             --deployment-config-name CodeDeployDefault.AllAtOnce \
