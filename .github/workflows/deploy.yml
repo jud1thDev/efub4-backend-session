@@ -6,7 +6,7 @@ on:
 
 env:
   AWS_REGION: ap-northeast-2
-  S3_BUCKET_NAME: efub-blog
+  S3_BUCKET_NAME: efub-blog-final-trial
   CODE_DEPLOY_APPLICATION_NAME: efub-blog-codedeploy-app
   CODE_DEPLOY_DEPLOYMENT_GROUP_NAME: efub-blog-codedeploy-deployment-group
 
