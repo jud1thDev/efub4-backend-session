@@ -8,7 +8,7 @@ env:
   AWS_REGION: ap-northeast-2
   S3_BUCKET_NAME: efub-blog
   CODE_DEPLOY_APPLICATION_NAME: efub-blog-codedeploy-app
-  CODE_DEPLOY_DEPLOYMENT_GROUP_NAME: efub-blog-codedeploy-deployment-group-2
+  CODE_DEPLOY_DEPLOYMENT_GROUP_NAME: efub-blog-codedeploy-deployment-group
 
 permissions:
   contents: read
