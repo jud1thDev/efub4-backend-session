@@ -19,7 +19,7 @@ jobs:
 
       - name: Make application.yml
         run: |
-          mkdir ./blog/src/main/resources
+          mkdir -p ./blog/src/main/resources #디렉토리가 없으면 생성
           cd ./blog/src/main/resources
           touch ./application.yml
           echo "${{ secrets.APPLICATION }}" > ./application.yml
